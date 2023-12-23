@@ -6,21 +6,21 @@ use std::time::Instant;
 use object::Object;
 use sfml::{
     graphics::{Color, RenderTarget, RenderWindow},
-    window::Style,
+    window::{Style, VideoMode},
 };
 
 fn get_objects() -> Vec<Object> {
     vec![
         Object::new((1000.0, 500.0), (0.0, 0.0), 2000.0),
-        Object::new((1300.0, 500.0), (0.0, -5.0), 80.0),
-        Object::new((500.0, 500.0), (0.0, 3.0), 80.0),
-        Object::new((200.0, 500.0), (0.0, 3.0), 80.0),
-        Object::new((1800.0, 500.0), (0.0, -3.0), 80.0),
+        Object::new((400.0, 500.0), (0.0, 3.0), 80.0),
+        Object::new((200.0, 500.0), (0.0, 4.0), 80.0),
+        Object::new((1800.0, 500.0), (0.0, -4.0), 80.0),
+        Object::new((1600.0, 500.0), (0.0, -3.0), 80.0),
         Object::new((600.0, 500.0), (0.0, 4.0), 10.0),
-        Object::new((1600.0, 500.0), (0.0, -4.0), 10.0),
-        Object::new((1400.0, 500.0), (0.0, -8.0), 10.0),
         Object::new((800.0, 500.0), (0.0, 4.0), 10.0),
         Object::new((850.0, 500.0), (0.0, 4.0), 10.0),
+        Object::new((1300.0, 500.0), (0.0, -4.0), 10.0),
+        Object::new((1400.0, 500.0), (0.0, -8.0), 10.0),
     ]
 }
 
@@ -28,7 +28,7 @@ fn main() {
     let play_speed = 10.0;
 
     let mut window = RenderWindow::new(
-        (600, 600),
+        VideoMode::desktop_mode(),
         "Minephysics",
         Style::FULLSCREEN,
         &Default::default(),
